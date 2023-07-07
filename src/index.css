@@ -1,0 +1,40 @@
+/* FONT */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+/* font-family: 'Nunito', sans-serif; */
+
+:root{
+    --bg-card: #1A262A;
+    --color-green: green;
+  }
+  
+
+
+/* RSET */ 
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+h1, h2, h3, p, ul{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+input{
+    font-size: inherit;
+    border: none;
+}
+img{
+    display: block;
+}

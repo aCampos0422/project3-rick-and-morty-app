@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
+import "./style/ResidentStyle.css"
 
 const ResidentCard = ({url}) => {
 
@@ -12,26 +13,35 @@ const ResidentCard = ({url}) => {
 
     },[])
 
-    return(
-        <article>
-            <header>
-                <img src={character?.image} alt="" />
-                <div>
-                    <div className="circle"></div>
-                    <span>{character?.status}</span>
-                </div>
-            </header>
-            <section>
-                <h3>{character?.name}</h3>
-                <hr />
-                <ul>
-                    <li><span>Specie: </span><span>{character?.species}</span></li>
-                    <li><span>Origin: </span><span>{character?.origin.name}</span></li>
-                    <li><span>Episodes where appear: </span><span>{character?.episode.length}</span></li>
-                </ul>
-            </section>
-        </article>
-    )
+    return (
+      <article className="resident">
+        <header className="resident__header">
+          <img className="resident__image" src={character?.image} alt="" />
+          <div className="resident__status">
+            <div className={`resident__status_circle ${character?.status}`}></div>
+            <span className="resident__status_value">{character?.status}</span>
+          </div>
+        </header>
+        <section className="resident__body">
+          <h3 className="resident__name">{character?.name}</h3>
+          <hr className="resident__line" />
+          <ul className="resident__list">
+            <li className="resident__item">
+              <span className="resident__label">Specie: </span>
+              <span className="resident__item-value">{character?.species}</span>
+            </li>
+            <li className="resident_item">
+              <span className="resident__label">Origin: </span>
+              <span className="resident__item-value">{character?.origin.name}</span>
+            </li>
+            <li className="resident_item">
+              <span className="resident__label">Episodes where appear: </span>
+              <span className="resident__item-value">{character?.episode.length}</span>
+            </li>
+          </ul>
+        </section>
+      </article>
+    );
 
 }
 
