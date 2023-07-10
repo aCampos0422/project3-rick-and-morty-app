@@ -1,4 +1,5 @@
 import getRandomNumber from "../utils/getRandomNum"
+import './style/FormSearch.css'
 
 
 
@@ -19,9 +20,9 @@ const FormSearch = ({setIdLocation})=> {
 
     return(
         <>
-            <form onSubmit={handleSubmit}>
-                <input id='inputId' style={{boxShadow: '1px 1px 10px'}} type="text" />
-                <button style={{backgroundColor: 'green', color: 'white'}}>Search</button>
+            <form className="form__input" onSubmit={handleSubmit}>
+                <input className='form__i' id='inputId' type="text" />
+                <button className='form__buttom'>Search</button>
             </form>
         </>
     )

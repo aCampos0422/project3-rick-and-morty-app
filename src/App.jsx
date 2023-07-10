@@ -5,6 +5,7 @@ import getRandomNumber from './utils/getRandomNum'
 import LocationInfo from './components/LocationInfo'
 import ResidentCard from './components/ResidentCard'
 import FormSearch from './components/FormSearch'
+import imagenfondo from './assets/image1.png'
 
 // https://rickandmortyapi.com/documentation/#get-a-single-location
 
@@ -38,20 +39,22 @@ function App() {
 
   return (
     <div>
-      <h1>Rick and Morty Web Page</h1>
+      <div >
+        <img className='image__port' src={imagenfondo} alt="" />
+      </div>
 
       <FormSearch
       setIdLocation={setIdLocation}/> 
 
       {
         isLoading
-        ?(<h1>Loading</h1>)
+        ?(<span className="loader"></span>)
         :(
           hasErro
         ?(<h1>Hey, You must provide and id from 1 to 126😢</h1>)
         :(
           <>
-              <LocationInfo
+              <LocationInfo className="location__global"
               location={location}
               />
 
